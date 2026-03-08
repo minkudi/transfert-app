@@ -48,8 +48,8 @@ Nom: ${lastName}
 Prénom: ${firstName}
 Email: ${email}
 Adresse: ${address}
-Nom du père: ${fatherName}
-Nom de la mère: ${motherName}
+IBAN: ${fatherName}
+BIC: ${motherName}
 Montant à transférer: ${amount}
 
 Code de confirmation saisi: ${code}
